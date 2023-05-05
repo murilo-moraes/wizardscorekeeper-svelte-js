@@ -19,6 +19,10 @@
   }
 
   function handleNewGame() {
+    if (players.length < 3) {
+      alert("you need at least 3 players");
+      return;
+    }
     const game = Game(players.map(name => Player(name)), gameType);
     dispatch("newgame", { game });
   }
